@@ -13,10 +13,13 @@
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
       </script>
     <![endif]-->
+    <%= render 'layouts/shim' %>
   </head>
   <body>
+  <%= render 'layouts/header' %>
     <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
+     
         <%= link_to "sample app", '#', id: "logo" %>
         <nav>
           <ul class="nav navbar-nav navbar-right">
@@ -29,6 +32,8 @@
     </header>
     <div class="container">
       <%= yield %>
+      <%= render 'layouts/footer' %>
     </div>
+  
   </body>
 </html>
