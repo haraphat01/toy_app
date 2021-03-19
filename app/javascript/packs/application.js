@@ -15,3 +15,11 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+import "channels"
+import "jquery"
+import "bootstrap"
+
+Rails.start()
+Turbolinks.start()
+ActiveStorage.start()
+
