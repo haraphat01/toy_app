@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_20_101455) do
+ActiveRecord::Schema.define(version: 2021_03_20_172330) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2021_03_20_101455) do
     t.string "password_digest"
     t.string "remember_digest"
     t.boolean "admin", default: false
+    t.boolean "activated", default: false
   end
 
 end
