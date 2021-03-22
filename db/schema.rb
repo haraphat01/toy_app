@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_20_172330) do
+ActiveRecord::Schema.define(version: 2021_03_22_085342) do
+
+  create_table "microposts", force: :cascade do |t|
+    t.text "content"
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_microposts_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -21,6 +29,8 @@ ActiveRecord::Schema.define(version: 2021_03_20_172330) do
     t.string "remember_digest"
     t.boolean "admin", default: false
     t.boolean "activated", default: false
+    t.datetime "activated_at"
   end
 
+  add_foreign_key "microposts", "users"
 end
